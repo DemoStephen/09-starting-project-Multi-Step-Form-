@@ -40,7 +40,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [codewithstephen.com/multistepform](https://github.com/DemoStephen/09-starting-project-Multi-Step-Form-)
-- Live Site URL: [codewithstephen.com/multistepform](https://github.io/09-starting-project(multi-step-form))
+- Live Site URL: [codewithstephen.com/multistepform](https://demostephen.github.io/09-starting-project-Multi-Step-Form-/)
 
 ## My process
 
