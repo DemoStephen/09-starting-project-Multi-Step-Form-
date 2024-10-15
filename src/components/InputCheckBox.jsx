@@ -5,7 +5,7 @@ export default function InputCheckBox({ id, title, about, price }) {
       <div className="d-flex gap">
         <input type="checkbox" name="addOns" id={id} />
         <div>
-          <strong className="htmlFormTitle">{title}</strong>
+          <strong className="formTitle">{title}</strong>
           <p>{about}</p>
         </div>
       </div>

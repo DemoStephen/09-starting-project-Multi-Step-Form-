@@ -1,7 +1,8 @@
 /* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
+
 import { useState } from "react";
 
-/* eslint-disable react/prop-types */
 export default function InputText({
   title,
   type,
@@ -10,16 +11,25 @@ export default function InputText({
   autoComplete,
 }) {
   const [value, setValue] = useState("");
+  const [error, setError] = useState("");
   function handleValue(event) {
     setValue((prev) => event.target.value);
+    formValidation();
   }
-
+  function formValidation() {
+    const mailFormat = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+    if (value === "") {
+      setError((prev) => "This field is required");
+    } else {
+      setError((prev) => "");
+    }
+  }
   return (
     <>
       <label htmlFor={name}>
         <div className="d-flex errorHandle">
-          <strong className="htmlFormTitle">{title}</strong>
-          <span className="error"></span>
+          <strong className="formTitle">{title}</strong>
+          <span className="error">{error}</span>
         </div>
         <input
           type={type}
@@ -28,7 +38,7 @@ export default function InputText({
           placeholder={placeholder}
           required
           autoComplete={autoComplete}
-          className="sectOneInput"
+          className={`sectOneInput `}
           value={value}
           onChange={() => handleValue(event)}
         />
