@@ -1,8 +1,12 @@
+/* eslint-disable react/prop-types */
+
 import InputCheckBox from "./InputCheckBox";
-export default function FormSection3() {
+export default function FormSection3({ currentView }) {
   return (
     <>
-      <section className="sectionThree d-flex">
+      <section
+        className={`sectionThree d-flex ${currentView === 2 ? "" : "d-none"}`}
+      >
         <InputCheckBox
           id="onlineService"
           title="Online service"

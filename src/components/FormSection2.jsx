@@ -1,11 +1,14 @@
+/* eslint-disable react/prop-types */
 import InputRadio from "./InputRadio";
 import arcade from "../assets/images/icon-arcade.svg";
 import advanced from "../assets/images/icon-advanced.svg";
 import pro from "../assets/images/icon-pro.svg";
-export default function FormSection2() {
+export default function FormSection2({ currentView }) {
   return (
     <>
-      <section className="sectionTwo d-flex">
+      <section
+        className={`sectionTwo d-flex ${currentView === 1 ? "" : "d-none"}`}
+      >
         <section className="d-flex">
           <InputRadio id="arcade" imgSrc={arcade} title="Arcade" price="9/mo" />
           <InputRadio
@@ -13,6 +16,7 @@ export default function FormSection2() {
             imgSrc={advanced}
             title="Advanced"
             price="12/mo"
+            Checked={true}
           />
           <InputRadio id="pro" imgSrc={pro} title="Pro" price="15/mo" />
         </section>

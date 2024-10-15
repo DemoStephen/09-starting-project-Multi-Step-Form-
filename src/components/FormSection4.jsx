@@ -1,7 +1,8 @@
-export default function FormSection4() {
+/* eslint-disable react/prop-types */
+export default function FormSection4({ currentView }) {
   return (
     <>
-      <section className="sectionFour">
+      <section className={`sectionFour ${currentView === 3 ? "" : "d-none"}`}>
         <section>
           <div className="d-flex arcade">
             <p>
