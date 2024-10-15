@@ -5,35 +5,39 @@ import FormSection3 from "./FormSection3";
 import FormSection4 from "./FormSection4";
 import Header from "./Header";
 import { header } from "../util/data";
-export default function Form({ currentView, onChangeView, onSubmit }) {
+export default function Form({
+  currentView,
+  onNextView,
+  onPreviousView,
+  onSubmit,
+}) {
   return (
     <>
-      <form action="#" method="post">
+      <form action="#" method="post" onSubmit={() => onSubmit()}>
         <Header
           title={header[currentView].heading}
           paragraph={header[currentView].text}
         />
-        {currentView === 0 && <FormSection1 />}
-        {currentView === 1 && <FormSection2 />}
-        {currentView === 2 && <FormSection3 />}
-        {currentView === 3 && <FormSection4 />}
+        <FormSection1 currentView={currentView} />
+        <FormSection2 currentView={currentView} />
+        <FormSection3 currentView={currentView} />
+        <FormSection4 currentView={currentView} />
 
         <section className=" nextPrevious">
           <div className="d-flex">
-            {currentView > 0 && (
-              <button type="button" className="goBack">
-                Go Back
-              </button>
-            )}
-            {currentView < 3 && (
-              <button type="button" onClick={() => onChangeView()}>
+            <button
+              type="button"
+              className={`goBack ${currentView > 0 ? "" : "visibility"}`}
+              onClick={() => onPreviousView()}
+            >
+              Go Back
+            </button>
+            {currentView < 3 ? (
+              <button type="button" onClick={() => onNextView()}>
                 Next Step
               </button>
-            )}
-            {currentView > 2 && (
-              <button type="submit" onClick={() => onSubmit()}>
-                Submit
-              </button>
+            ) : (
+              <button type="submit">Submit</button>
             )}
           </div>
           <div className="attribution">
