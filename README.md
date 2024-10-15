@@ -35,19 +35,19 @@ Users should be able to:
 
 #### DeskTop View
 
-![](./src/styles/desktop-design-step-1.jpg step-1)
-![](./src/styles/desktop-design-step-2-monthly.jpg step-2)
-![](./src/styles/desktop-design-step-3-monthly.jpg step-3)
-![](./src/styles/desktop-design-step-4-monthly.jpg step-4)
-![](./src/styles/desktop-design-step-5.jpg step-5)
+![step 1](./src/templates/desktop-design-step-1.jpg)
+![step-2](./src/templates/desktop-design-step-2-monthly.jpg)
+![step-3](./src/templates/desktop-design-step-3-monthly.jpg)
+![step-4](./src/templates/desktop-design-step-4-monthly.jpg)
+![step-5](./src/templates/desktop-design-step-5.jpg)
 
 #### Mobile View
 
-![](./src/styles/mobile-design-step-1.jpg step-1)
-![](./src/styles/mobile-design-step-2-monthly.jpg step-2)
-![](./src/styles/mobile-design-step-3-monthly.jpg step-3)
-![](./src/styles/mobile-design-step-4-monthly.jpg step-4)
-![](./src/styles/mobile-design-step-5.jpg step-5)
+![step-1](./src/templates/mobile-design-step-1.jpg)
+![step-2](./src/templates/mobile-design-step-2-monthly.jpg)
+![step-3](./src/templates/mobile-design-step-3-monthly.jpg)
+![step-4](./src/templates/mobile-design-step-4-monthly.jpg)
+![step-5](./src/templates/mobile-design-step-5.jpg)
 
 ### Links
 
@@ -58,7 +58,7 @@ Users should be able to:
 
 ### Built with
 
-- [React](https://reactjs.org/) - JS library
+- [Vite React](https://vite.dev/) - JS library
 - CSS
 
 ### What I learned
