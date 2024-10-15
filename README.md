@@ -1,14 +1,12 @@
 # Multi Step Form
 
-This is a solution to the [Multi-step form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ).
+This is a solution to the Multi-step form challenge on [Frontend Mentor](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ).
 
 ## Table of contents
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
-    -[DeskTop View](#desktop-view)
-    -[Mobile View](#mobile-view)
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
@@ -33,25 +31,15 @@ Users should be able to:
 
 ### Screenshot
 
-#### DeskTop View
-
 ![step 1](./src/templates/desktop-design-step-1.jpg)
 ![step-2](./src/templates/desktop-design-step-2-monthly.jpg)
 ![step-3](./src/templates/desktop-design-step-3-monthly.jpg)
 ![step-4](./src/templates/desktop-design-step-4-monthly.jpg)
 ![step-5](./src/templates/desktop-design-step-5.jpg)
 
-#### Mobile View
-
-![step-1](./src/templates/mobile-design-step-1.jpg)
-![step-2](./src/templates/mobile-design-step-2-monthly.jpg)
-![step-3](./src/templates/mobile-design-step-3-monthly.jpg)
-![step-4](./src/templates/mobile-design-step-4-monthly.jpg)
-![step-5](./src/templates/mobile-design-step-5.jpg)
-
 ### Links
 
-- Solution URL: [codewithstephen.com/multistepform](https://github.com/demostephen/09-starting-project(multi-step-form))
+- Solution URL: [codewithstephen.com/multistepform](https://github.com/DemoStephen/09-starting-project-Multi-Step-Form-)
 - Live Site URL: [codewithstephen.com/multistepform](https://github.io/09-starting-project(multi-step-form))
 
 ## My process
