@@ -1,9 +1,10 @@
-export default function Header() {
+/* eslint-disable react/prop-types */
+export default function Header({ title, paragraph }) {
   return (
     <>
       <header>
-        <h1>Personal info</h1>
-        <p>Please provide your name, email address, and phone number.</p>
+        <h1>{title}</h1>
+        <p>{paragraph}</p>
       </header>
     </>
   );
