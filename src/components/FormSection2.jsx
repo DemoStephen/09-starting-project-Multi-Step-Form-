@@ -5,7 +5,7 @@ import pro from "../assets/images/icon-pro.svg";
 export default function FormSection2() {
   return (
     <>
-      <section className="sectionTwo d-flex d-none">
+      <section className="sectionTwo d-flex">
         <section className="d-flex">
           <InputRadio id="arcade" imgSrc={arcade} title="Arcade" price="9/mo" />
           <InputRadio

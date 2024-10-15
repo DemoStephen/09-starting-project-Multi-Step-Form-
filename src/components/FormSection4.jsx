@@ -1,7 +1,7 @@
 export default function FormSection4() {
   return (
     <>
-      <section className="sectionFour d-none">
+      <section className="sectionFour">
         <section>
           <div className="d-flex arcade">
             <p>
