@@ -67,6 +67,9 @@ form {
 header {
   margin: 0 0 1.5rem 0;
 }
+h1 {
+  font-size: 2em;
+}
 /* Step 1 */
 .sectionOne {
   flex-direction: column;
@@ -81,7 +84,10 @@ header {
   outline: none;
   color: var(--coolgray);
 }
-
+.sectionOne .sectOneInput.error {
+  border: 0.125rem solid var(--strawberryred);
+  color: var(--strawberryred);
+}
 /* Step 2 */
 .sectionTwo {
   gap: 2rem;
@@ -282,11 +288,12 @@ h3,
 }
 .d-none {
   display: none;
+}
+.visibility {
   visibility: hidden;
 }
 .d-block {
   display: block;
-  visibility: visible;
 }
 .attribution {
   font-size: 11px;
@@ -309,6 +316,7 @@ h3,
     justify-content: unset;
     gap: 3rem;
     background-color: unset;
+    min-height: 100vh;
   }
   nav {
     background-image: url("./assets/images/bg-sidebar-mobile.svg");
@@ -327,7 +335,7 @@ h3,
   }
   .section {
     width: 90%;
-    margin: auto;
+    margin: -6rem auto 0 auto;
     background-color: var(--alabaster);
     border-radius: 1rem;
     position: unset;
@@ -374,5 +382,6 @@ h3,
   main {
     padding: unset;
     width: 100%;
+    min-height: 100svh;
   }
 }

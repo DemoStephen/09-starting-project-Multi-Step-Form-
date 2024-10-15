@@ -7,7 +7,10 @@ export default function App() {
   const [currentView, setCurrentView] = useState(0);
   const [submit, setSubmit] = useState(false);
   function handleNextView() {
-    setCurrentView((prev) => (prev = prev + 1));
+    setCurrentView((prev) => prev + 1);
+  }
+  function handlePreviousView() {
+    setCurrentView((prev) => prev - 1);
   }
   function handleSubmit() {
     setSubmit(true);
@@ -22,7 +25,8 @@ export default function App() {
           ) : (
             <Form
               currentView={currentView}
-              onChangeView={() => handleNextView()}
+              onNextView={() => handleNextView()}
+              onPreviousView={() => handlePreviousView()}
               onSubmit={handleSubmit}
             />
           )}
