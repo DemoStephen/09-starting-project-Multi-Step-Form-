@@ -1,6 +1,14 @@
 /* eslint-disable react/prop-types */
 import InputText from "./InputText";
-export default function FormSection1({ currentView }) {
+export default function FormSection1({
+  currentView,
+  name,
+  email,
+  phone,
+  nameError,
+  emailError,
+  phoneError,
+}) {
   return (
     <>
       <section
@@ -12,6 +20,8 @@ export default function FormSection1({ currentView }) {
           name="FullName"
           placeholder="e.g. Stephen Adewale"
           autoComplete="cc-name"
+          ref={name}
+          error={nameError}
         />
         <InputText
           title="Email Address"
@@ -19,6 +29,8 @@ export default function FormSection1({ currentView }) {
           name="EmailAddress"
           placeholder="e.g. adewalestephennifemi@gmail.com"
           autoComplete="email"
+          ref={email}
+          error={emailError}
         />
         <InputText
           title="Phone Number"
@@ -26,6 +38,8 @@ export default function FormSection1({ currentView }) {
           name="PhoneNumber"
           placeholder="e.g. +234 903 009 4270"
           autoComplete="tel"
+          ref={phone}
+          error={phoneError}
         />
       </section>
     </>

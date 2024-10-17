@@ -1,29 +1,10 @@
-/* eslint-disable no-unused-vars */
+import { forwardRef } from "react";
+
 /* eslint-disable react/prop-types */
-
-import { useState } from "react";
-
-export default function InputText({
-  title,
-  type,
-  name,
-  placeholder,
-  autoComplete,
-}) {
-  const [value, setValue] = useState("");
-  const [error, setError] = useState("");
-  function handleValue(event) {
-    setValue((prev) => event.target.value);
-    formValidation();
-  }
-  function formValidation() {
-    const mailFormat = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-    if (value === "") {
-      setError((prev) => "This field is required");
-    } else {
-      setError((prev) => "");
-    }
-  }
+const InputText = forwardRef(function InputText(
+  { title, type, name, placeholder, autoComplete, error },
+  ref
+) {
   return (
     <>
       <label htmlFor={name}>
@@ -38,11 +19,11 @@ export default function InputText({
           placeholder={placeholder}
           required
           autoComplete={autoComplete}
-          className={`sectOneInput `}
-          value={value}
-          onChange={() => handleValue(event)}
+          className={`sectOneInput ${error ? "error" : ""}`}
+          ref={ref}
         />
       </label>
     </>
   );
-}
+});
+export default InputText;
