@@ -1,3 +1,7 @@
+import arcade from "../assets/images/icon-arcade.svg";
+import advanced from "../assets/images/icon-advanced.svg";
+import pro from "../assets/images/icon-pro.svg";
+
 export const header = [
   {
     heading: "Personal info",
@@ -14,5 +18,47 @@ export const header = [
   {
     heading: "Finishing up",
     text: "Double-check everything looks OK before confirming.",
+  },
+];
+
+export const Plans = [
+  {
+    plan: "Arcade",
+    monthly: 9,
+    yearly: 108,
+    image: arcade,
+  },
+  {
+    plan: "Advanced",
+    monthly: 12,
+    yearly: 144,
+    image: advanced,
+  },
+  {
+    plan: "Pro",
+    monthly: 15,
+    yearly: 180,
+    image: pro,
+  },
+];
+
+export const AddOns = [
+  {
+    addon: "Online service",
+    about: "Access to multiplayer games",
+    price: 1,
+    id: "Onlineservice",
+  },
+  {
+    addon: "Larger storage",
+    about: "Extra 1TB of cloud save",
+    price: 2,
+    id: "Largerstorage",
+  },
+  {
+    addon: "Customizable Profile",
+    about: "Custom theme on your profile",
+    price: 2,
+    id: "CustomizableProfile",
   },
 ];
