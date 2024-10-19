@@ -209,6 +209,7 @@ h1 {
 }
 .addons p span:nth-child(2) {
   font-weight: 600;
+  color: var(--marineblue);
 }
 .totalOrder {
   margin: 2rem 1rem;
