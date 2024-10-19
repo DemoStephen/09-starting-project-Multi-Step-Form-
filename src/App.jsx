@@ -1,5 +1,5 @@
 /* eslint-disable no-useless-escape */
-import "./App.css";
+import "./styles/App.css";
 import Form from "./components/Form";
 import SideBar from "./components/Sidebar";
 import ThankYou from "./components/ThankYou";
@@ -25,6 +25,7 @@ export default function App() {
       email: email.current.value.trim(),
       phone: phone.current.value.trim(),
     };
+
     {
       !data.name ? setNameError("Name is required") : setNameError("");
     }
@@ -38,23 +39,26 @@ export default function App() {
     }
 
     if (data.name && data.phone && data.email.match(mailformat)) {
-      setCurrentView((prev) => prev + 1);
+      setCurrentView((prev) => (prev = prev + 1));
     } else {
       setCurrentView(0);
     }
-    return;
   }
+
   function handleNextView() {
     if (currentView === 0) {
       return formValidation();
     }
     setCurrentView((prev) => prev + 1);
   }
+
   function handlePreviousView() {
     setCurrentView((prev) => prev - 1);
   }
+
   function handleSubmit() {
     setSubmit(true);
+    setCurrentView(undefined);
   }
 
   return (
