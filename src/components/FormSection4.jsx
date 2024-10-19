@@ -1,5 +1,24 @@
 /* eslint-disable react/prop-types */
-export default function FormSection4({ currentView }) {
+import { Plans } from "../util/data";
+export default function FormSection4({ currentView, plan, duration }) {
+  let data = {
+    plan: "",
+    price: "",
+    acronym: "",
+  };
+  Plans.map((info) => {
+    if (plan === info.plan) {
+      data.plan = info.plan;
+      if (duration === "monthly") {
+        data.price = info.monthly;
+        data.acronym = "mo";
+      }
+      if (duration === "yearly") {
+        data.price = info.yearly;
+        data.acronym = "yr";
+      }
+    }
+  });
   return (
     <>
       <section className={`sectionFour ${currentView === 3 ? "" : "d-none"}`}>
@@ -7,14 +26,14 @@ export default function FormSection4({ currentView }) {
           <div className="d-flex arcade">
             <p>
               <strong>
-                <b>Arcade</b> <b>(monthly)</b>
+                <b>{plan}</b> <b>({duration})</b>
               </strong>
               <br />
               <span>Change</span>
             </p>
             <p>
               <strong>
-                <b>$90</b>/<b>mo</b>
+                <b>${data.price}</b>/<b>{data.acronym}</b>
               </strong>
             </p>
           </div>
@@ -23,7 +42,7 @@ export default function FormSection4({ currentView }) {
         </section>
         <div className="totalOrder d-flex">
           <p>
-            Total (per <span>year</span>)
+            Total (<span>{duration}</span>)
           </p>
           <p>
             <strong>+$120/yr</strong>
