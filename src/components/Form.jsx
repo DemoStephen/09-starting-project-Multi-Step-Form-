@@ -21,16 +21,18 @@ export default function Form({
 }) {
   const plans = useRef();
   const duration = useRef();
-  const addOns = useRef();
+  const addOn = useRef();
 
   const [plan, setplan] = useState("Advanced");
   const [durations, setDurations] = useState("monthly");
-  // const [addOn, setAddOn] = useState([
-  //   {
-  //     name: "",
-  //     price: "",
-  //   },
-  // ]);
+  const [addOns, setAddOns] = useState([
+    {
+      name: "",
+      price: "",
+      abbr: "",
+      id: "",
+    },
+  ]);
 
   function handlePlan(newPlan) {
     setplan(newPlan);
@@ -42,15 +44,17 @@ export default function Form({
       setDurations("monthly");
     }
   }
-  // function handleAddOns(data) {
-  //   setAddOn((prev) => [
-  //     ...prev,
-  //     {
-  //       name: data.name,
-  //       price: data.price,
-  //     },
-  //   ]);
-  // }
+  function handleAddOns(data) {
+    setAddOns((prev) => [
+      ...prev,
+      {
+        name: data.name,
+        price: data.price,
+        abbr: data.abbr,
+        id: data.id,
+      },
+    ]);
+  }
   return (
     <>
       <form action="#" method="post" onSubmit={onSubmit}>
@@ -58,7 +62,6 @@ export default function Form({
           title={header[currentView].heading}
           paragraph={header[currentView].text}
         />
-
         <FormSection1
           currentView={currentView}
           name={name}
@@ -79,13 +82,15 @@ export default function Form({
         />
         <FormSection3
           currentView={currentView}
-          addOns={addOns}
-          // onChange={handleAddOns}
+          onChange={handleAddOns}
+          AddOn={addOn}
+          duration={durations}
         />
         <FormSection4
           currentView={currentView}
           plan={plan}
           duration={durations}
+          addOns={addOns}
         />
 
         <SectionChange
