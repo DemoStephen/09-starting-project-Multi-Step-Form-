@@ -1,18 +1,26 @@
 /* eslint-disable react/prop-types */
-export default function InputRadio({ id, imgSrc, title, price, Checked }) {
+
+import { forwardRef } from "react";
+
+const InputRadio = forwardRef(function InputRadio(
+  { imgSrc, title, price, onChange, selectedPlan },
+  ref
+) {
   return (
     <>
       <div className="arcade">
         <input
           type="radio"
           name="plan"
-          id={id}
-          value={id}
-          defaultChecked={Checked}
+          id={title}
+          value={title}
+          ref={ref}
+          onChange={() => onChange(title)}
           required
+          checked={selectedPlan === title && true}
         />
-        <label htmlFor={id} className="d-flex">
-          <img src={imgSrc} alt={id} />
+        <label htmlFor={title} className="d-flex">
+          <img src={imgSrc} alt={title} />
           <div>
             <h3>{title}</h3>
             <p>${price}</p>
@@ -21,4 +29,5 @@ export default function InputRadio({ id, imgSrc, title, price, Checked }) {
       </div>
     </>
   );
-}
+});
+export default InputRadio;
