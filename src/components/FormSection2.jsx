@@ -18,7 +18,11 @@ const FormSection2 = forwardRef(function FormSection2(
                 key={info.plan}
                 imgSrc={info.image}
                 title={info.plan}
-                price={`${info.monthly}/mo`}
+                price={
+                  checked === "monthly"
+                    ? `${info.monthly}/mo`
+                    : `${info.yearly}/yr`
+                }
                 ref={plans}
                 onChange={handlePlan}
                 selectedPlan={plan}

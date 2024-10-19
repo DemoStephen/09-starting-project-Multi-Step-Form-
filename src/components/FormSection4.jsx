@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Plans } from "../util/data";
-export default function FormSection4({ currentView, plan, duration }) {
-  let data = {
+export default function FormSection4({ currentView, plan, duration, addOns }) {
+  const data = {
     plan: "",
     price: "",
     acronym: "",
@@ -38,7 +38,18 @@ export default function FormSection4({ currentView, plan, duration }) {
             </p>
           </div>
           <hr />
-          <div className="addons"></div>
+          <div className="addons">
+            {addOns.map((addOn) => {
+              return (
+                <p className="d-flex" key={addOn.id}>
+                  <span>{addOn.name}</span>
+                  <span>
+                    {addOn.price}$/{addOn.abbr}
+                  </span>
+                </p>
+              );
+            })}
+          </div>
         </section>
         <div className="totalOrder d-flex">
           <p>

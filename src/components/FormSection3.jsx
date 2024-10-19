@@ -1,7 +1,12 @@
 /* eslint-disable react/prop-types */
 import { AddOns } from "../util/data";
 import InputCheckBox from "./InputCheckBox";
-export default function FormSection3({ currentView }) {
+export default function FormSection3({
+  currentView,
+  onChange,
+  AddOn,
+  duration,
+}) {
   return (
     <>
       <section
@@ -14,7 +19,10 @@ export default function FormSection3({ currentView }) {
               id={addOn.id}
               title={addOn.addon}
               about={addOn.about}
-              price={addOn.price}
+              price={duration === "monthly" ? addOn.monthly : addOn.yearly}
+              onChange={onChange}
+              ref={AddOn}
+              duration={duration}
             />
           );
         })}
