@@ -1,14 +1,14 @@
 @font-face {
   font-family: "Ubuntu-Regular";
-  src: url("./assets/fonts/Ubuntu-Regular.ttf") format(truetype);
+  src: url("../assets/fonts/Ubuntu-Regular.ttf") format(truetype);
 }
 @font-face {
   font-family: "Ubuntu-Medium";
-  src: url("./assets/fonts/Ubuntu-Medium.ttf") format(truetype);
+  src: url("../assets/fonts/Ubuntu-Medium.ttf") format(truetype);
 }
 @font-face {
   font-family: "Ubuntu-Bold";
-  src: url("./assets/fonts/Ubuntu-Bold.ttf") format(truetype);
+  src: url("../assets/fonts/Ubuntu-Bold.ttf") format(truetype);
 }
 :root {
   --marineblue: hsl(213, 96%, 18%);
@@ -29,4 +29,25 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Ubuntu-Regular";
+}
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.gap {
+  gap: 2rem;
+}
+.d-flex {
+  display: flex;
+  align-content: center;
+}
+.d-none {
+  display: none;
+}
+.visibility {
+  visibility: hidden;
+}
+.d-block {
+  display: block;
 }
