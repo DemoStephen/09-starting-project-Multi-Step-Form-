@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { Context } from "../App";
 import { header } from "../util/data";
-/* eslint-disable react/prop-types */
 export default function Header() {
   const { view } = useContext(Context);
   return (
