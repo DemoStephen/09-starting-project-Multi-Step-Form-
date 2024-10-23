@@ -1,16 +1,14 @@
 /* eslint-disable react/prop-types */
 import InputRadio from "./InputRadio";
-import { forwardRef } from "react";
+import { useContext } from "react";
 import { Plans } from "../util/data";
-const FormSection2 = forwardRef(function FormSection2(
-  { currentView, plans, handlePlan, plan, checked, onChange },
-  ref
-) {
+import { Context } from "../App";
+export default function FormSection2() {
+  const { view, plans, handlePlan, plan, checked, onChange, ref } =
+    useContext(Context);
   return (
     <>
-      <section
-        className={`sectionTwo d-flex ${currentView === 1 ? "" : "d-none"}`}
-      >
+      <section className={`sectionTwo d-flex ${view === 1 ? "" : "d-none"}`}>
         <section className="d-flex">
           {Plans.map((info) => {
             return (
@@ -53,5 +51,4 @@ const FormSection2 = forwardRef(function FormSection2(
       </section>
     </>
   );
-});
-export default FormSection2;
+}

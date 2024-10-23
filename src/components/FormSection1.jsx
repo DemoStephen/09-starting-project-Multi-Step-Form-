@@ -1,19 +1,13 @@
 /* eslint-disable react/prop-types */
+import { useContext } from "react";
 import InputText from "./InputText";
-export default function FormSection1({
-  currentView,
-  name,
-  email,
-  phone,
-  nameError,
-  emailError,
-  phoneError,
-}) {
+import { Context } from "../App";
+export default function FormSection1() {
+  const { name, nameError, email, emailError, phone, phoneError, view } =
+    useContext(Context);
   return (
     <>
-      <section
-        className={`sectionOne d-flex ${currentView === 0 ? "" : "d-none"}`}
-      >
+      <section className={`sectionOne d-flex ${view === 0 ? "" : "d-none"}`}>
         <InputText
           title="Name"
           type="name"

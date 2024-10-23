@@ -1,17 +1,13 @@
 /* eslint-disable react/prop-types */
+import { useContext } from "react";
 import { AddOns } from "../util/data";
 import InputCheckBox from "./InputCheckBox";
-export default function FormSection3({
-  currentView,
-  onChange,
-  AddOn,
-  duration,
-}) {
+import { Context } from "../App";
+export default function FormSection3() {
+  const { view, onChange, AddOn, duration } = useContext(Context);
   return (
     <>
-      <section
-        className={`sectionThree d-flex ${currentView === 2 ? "" : "d-none"}`}
-      >
+      <section className={`sectionThree d-flex ${view === 2 ? "" : "d-none"}`}>
         {AddOns.map((addOn) => {
           return (
             <InputCheckBox

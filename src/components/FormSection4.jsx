@@ -1,6 +1,9 @@
 /* eslint-disable react/prop-types */
+import { useContext } from "react";
 import { Plans } from "../util/data";
-export default function FormSection4({ currentView, plan, duration, addOns }) {
+import { Context } from "../App";
+export default function FormSection4() {
+  const { view, plan, duration, addOns } = useContext(Context);
   const data = {
     plan: "",
     price: "",
@@ -21,7 +24,7 @@ export default function FormSection4({ currentView, plan, duration, addOns }) {
   });
   return (
     <>
-      <section className={`sectionFour ${currentView === 3 ? "" : "d-none"}`}>
+      <section className={`sectionFour ${view === 3 ? "" : "d-none"}`}>
         <section>
           <div className="d-flex arcade">
             <p>
