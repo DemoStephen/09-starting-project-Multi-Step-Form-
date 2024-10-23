@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useContext } from "react";
 import InputText from "./InputText";
 import { Context } from "../App";

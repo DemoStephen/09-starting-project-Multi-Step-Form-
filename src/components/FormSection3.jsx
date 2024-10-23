@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useContext } from "react";
 import { AddOns } from "../util/data";
 import InputCheckBox from "./InputCheckBox";
