@@ -3,8 +3,19 @@ import "./styles/App.css";
 import Form from "./components/Form";
 import SideBar from "./components/Sidebar";
 import ThankYou from "./components/ThankYou";
-import { useState, useRef } from "react";
-
+import { useState, useRef, createContext } from "react";
+export const Context = createContext({
+  view: 0,
+  nextView: () => {},
+  prevView: () => {},
+  submit: () => {},
+  name: "",
+  email: "",
+  phone: "",
+  nameError: "",
+  emailError: "",
+  phoneError: "",
+});
 export default function App() {
   const [currentView, setCurrentView] = useState(0);
   const [submit, setSubmit] = useState(false);
@@ -61,8 +72,20 @@ export default function App() {
     setCurrentView(undefined);
   }
 
+  const output = {
+    view: currentView,
+    nextView: handleNextView,
+    prevView: handlePreviousView,
+    submit: handleSubmit,
+    name: name,
+    email: email,
+    phone: phone,
+    nameError: nameError,
+    emailError: emailError,
+    phoneError: phoneError,
+  };
   return (
-    <>
+    <Context.Provider value={output}>
       <main className="d-flex">
         <SideBar currentView={currentView} />
         <section className="section">
@@ -84,6 +107,6 @@ export default function App() {
           )}
         </section>
       </main>
-    </>
+    </Context.Provider>
   );
 }
