@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { Context } from "../App";
-/* eslint-disable react/prop-types */
 export default function SectionChange() {
   const { view, nextView, prevView } = useContext(Context);
 
