@@ -1,10 +1,5 @@
-import { forwardRef } from "react";
-
 /* eslint-disable react/prop-types */
-const InputCheckBox = forwardRef(function InputCheckBox(
-  { id, title, about, price, onChange, duration },
-  ref
-) {
+export default function InputCheckBox({ id, title, about, price, duration }) {
   const data = {
     name: { title },
     price: { price },
@@ -14,13 +9,7 @@ const InputCheckBox = forwardRef(function InputCheckBox(
   return (
     <label htmlFor={id} className="d-flex">
       <div className="d-flex gap">
-        <input
-          type="checkbox"
-          name="addOns"
-          id={id}
-          ref={ref}
-          onChange={() => onChange(data)}
-        />
+        <input type="checkbox" name="addOns" id={id} />
         <div>
           <strong className="formTitle">{title}</strong>
           <p>{about}</p>
@@ -31,5 +20,4 @@ const InputCheckBox = forwardRef(function InputCheckBox(
       </p>
     </label>
   );
-});
-export default InputCheckBox;
+}
