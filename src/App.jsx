@@ -1,112 +1,32 @@
-/* eslint-disable no-useless-escape */
 import "./styles/App.css";
-import Form from "./components/Form";
+import Form from "./UI/Form";
 import SideBar from "./components/Sidebar";
-import ThankYou from "./components/ThankYou";
-import { useState, useRef, createContext } from "react";
+import { useState } from "react";
+// import Footer from "./UI/Footer";
+import { createContext } from "react";
 export const Context = createContext({
-  view: 0,
-  nextView: () => {},
-  prevView: () => {},
-  submit: () => {},
-  name: "",
-  email: "",
-  phone: "",
-  nameError: "",
-  emailError: "",
-  phoneError: "",
+  view: null,
+  handleView: () => {},
 });
 export default function App() {
-  const [currentView, setCurrentView] = useState(0);
-  const [submit, setSubmit] = useState(false);
+  const [view, setView] = useState(0);
 
-  const name = useRef();
-  const email = useRef();
-  const phone = useRef();
-
-  const [nameError, setNameError] = useState("");
-  const [emailError, setEmailError] = useState("");
-  const [phoneError, setPhoneError] = useState("");
-
-  function formValidation() {
-    const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-
-    const data = {
-      name: name.current.value.trim(),
-      email: email.current.value.trim(),
-      phone: phone.current.value.trim(),
-    };
-
-    {
-      !data.name ? setNameError("Name is required") : setNameError("");
-    }
-    {
-      !data.phone ? setPhoneError("Phone number required") : setPhoneError("");
-    }
-    {
-      data.email.match(mailformat)
-        ? setEmailError("")
-        : setEmailError("Valid Email Is required");
-    }
-
-    if (data.name && data.phone && data.email.match(mailformat)) {
-      setCurrentView((prev) => (prev = prev + 1));
-    } else {
-      setCurrentView(0);
-    }
+  function handleView(newView) {
+    setView(newView);
   }
-
-  function handleNextView() {
-    if (currentView === 0) {
-      return formValidation();
-    }
-    setCurrentView((prev) => prev + 1);
-  }
-
-  function handlePreviousView() {
-    setCurrentView((prev) => prev - 1);
-  }
-
-  function handleSubmit() {
-    setSubmit(true);
-    setCurrentView(undefined);
-  }
-
-  const output = {
-    view: currentView,
-    nextView: handleNextView,
-    prevView: handlePreviousView,
-    submit: handleSubmit,
-    name: name,
-    email: email,
-    phone: phone,
-    nameError: nameError,
-    emailError: emailError,
-    phoneError: phoneError,
+  const contextValue = {
+    view: view,
+    handleView: handleView,
   };
   return (
-    <Context.Provider value={output}>
+    <Context.Provider value={contextValue}>
       <main className="d-flex">
-        <SideBar currentView={currentView} />
+        <SideBar />
         <section className="section">
-          {submit ? (
-            <ThankYou />
-          ) : (
-            <Form
-              currentView={currentView}
-              onNextView={() => handleNextView()}
-              onPreviousView={() => handlePreviousView()}
-              onSubmit={handleSubmit}
-              name={name}
-              email={email}
-              phone={phone}
-              nameError={nameError}
-              emailError={emailError}
-              phoneError={phoneError}
-            />
-          )}
+          <Form />
         </section>
       </main>
+      {/* <Footer /> */}
     </Context.Provider>
   );
 }
