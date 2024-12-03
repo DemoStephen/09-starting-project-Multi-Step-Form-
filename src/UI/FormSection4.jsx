@@ -1,5 +1,7 @@
-/* eslint-disable react/prop-types */
-export default function FormSection4({ view }) {
+import { useContext } from "react";
+import { Context } from "../App";
+export default function FormSection4() {
+  const { view } = useContext(Context);
   const data = {
     plan: "",
     price: "",

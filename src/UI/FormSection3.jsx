@@ -1,7 +1,10 @@
 /* eslint-disable react/prop-types */
 import { AddOns } from "../util/data";
 import InputCheckBox from "../components/InputCheckBox";
-export default function FormSection3({ view }) {
+import { useContext } from "react";
+import { Context } from "../App";
+export default function FormSection3() {
+  const { view } = useContext(Context);
   return (
     <>
       <section className={`sectionThree d-flex  ${view === 2 ? "" : "d-none"}`}>
@@ -12,7 +15,8 @@ export default function FormSection3({ view }) {
               id={addOn.id}
               title={addOn.addon}
               about={addOn.about}
-              duration="monthly"
+              price={addOn.monthly}
+              duration={"monthly"}
             />
           );
         })}

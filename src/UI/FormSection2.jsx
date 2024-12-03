@@ -1,7 +1,20 @@
-/* eslint-disable react/prop-types */
 import InputRadio from "../components/InputRadio";
 import { Plans } from "../util/data";
-export default function FormSection2({ view }) {
+import { useContext, useRef, useState } from "react";
+import { Context } from "../App";
+
+export default function FormSection2() {
+  const [classes, setClasses] = useState(false);
+  const { view } = useContext(Context);
+  const ref = useRef();
+
+  function handleClasses() {
+    if (ref.current.checked) {
+      setClasses(true);
+    } else {
+      setClasses(false);
+    }
+  }
   return (
     <>
       <section className={`sectionTwo d-flex ${view === 1 ? "" : "d-none"}`}>
@@ -11,25 +24,28 @@ export default function FormSection2({ view }) {
               <InputRadio
                 key={info.plan}
                 plan={info.plan}
+                name={info.name}
                 image={info.image}
-                price={{ monthly: info.monthly, yearly: info.yearly }}
+                price={info.monthly}
               />
             );
           })}
         </section>
-        <div className="planTimeline d-flex">
-          <p className={`yearlyOrMonthly`}>Monthly</p>
 
+        <div className="planTimeline d-flex">
+          <p className={classes ? "" : "yearlyOrMonthly"}>Monthly</p>
           <div className="toggleContainer d-flex">
             <input
               type="checkbox"
-              name="planOption"
-              id="planOption"
+              name="duration"
+              id="duration"
               className="d-none"
+              ref={ref}
+              onChange={handleClasses}
             />
-            <label htmlFor="planOption" className="toggle"></label>
+            <label htmlFor="duration" className="toggle"></label>
           </div>
-          <p className={`yearlyOrMonthly`}>Yearly</p>
+          <p className={classes ? "yearlyOrMonthly" : ""}>Yearly</p>
         </div>
       </section>
     </>
