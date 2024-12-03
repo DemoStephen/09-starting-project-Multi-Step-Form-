@@ -27,18 +27,21 @@ export const Plans = [
     monthly: 9,
     yearly: 108,
     image: arcade,
+    name: "plan",
   },
   {
     plan: "Advanced",
     monthly: 12,
     yearly: 144,
     image: advanced,
+    name: "plan",
   },
   {
     plan: "Pro",
     monthly: 15,
     yearly: 180,
     image: pro,
+    name: "plan",
   },
 ];
 
