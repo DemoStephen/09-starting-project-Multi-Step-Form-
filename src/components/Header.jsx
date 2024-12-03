@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { Context } from "../App";
 import { header } from "../util/data";
+import { Context } from "../App";
 export default function Header() {
   const { view } = useContext(Context);
   return (
