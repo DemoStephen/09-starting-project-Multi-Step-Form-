@@ -15,10 +15,16 @@ export default function FormSection2() {
       setClasses(false);
     }
   }
+  // gap: 2rem;
+  // flex-direction: column;
+  // margin: 2rem 0;
+
   return (
     <>
-      <section className={`sectionTwo d-flex ${view === 1 ? "" : "hidden"}`}>
-        <section className="d-flex">
+      <section
+        className={`mt-8 flex flex-col gap-8 ${view === 1 ? "" : "hidden"}`}
+      >
+        <section className="flex gap-4 md:gap-6 flex-col md:flex-row">
           {Plans.map((info) => {
             return (
               <InputRadio
@@ -32,20 +38,32 @@ export default function FormSection2() {
           })}
         </section>
 
-        <div className="planTimeline d-flex">
-          <p className={classes ? "" : "yearlyOrMonthly"}>Monthly</p>
-          <div className="toggleContainer d-flex">
+        {/* content: "";
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  margin: 0.275rem 0.25rem;
+  border-radius: 50%;
+  background-color: var(--white);
+  transition: 0.5s; */}
+
+        <div className="flex justify-center gap-4">
+          <p className={classes ? "" : "font-medium"}>Monthly</p>
+          <div className="flex justify-center items-center">
             <input
               type="checkbox"
               name="duration"
               id="duration"
-              className="d-none"
+              className="peer hidden"
               ref={ref}
               onChange={handleClasses}
             />
-            <label htmlFor="duration" className="toggle"></label>
+            <label
+              htmlFor="duration"
+              className="peer-checked:before:translate-x-6 w-12 h-6 bg-blue-500 rounded-3xl cursor-pointer relative before:absolute before:rounded-full before:m-1 before:w-4 before:h-4 before:transition-all before:bg-white"
+            ></label>
           </div>
-          <p className={classes ? "yearlyOrMonthly" : ""}>Yearly</p>
+          <p className={classes ? "font-medium" : ""}>Yearly</p>
         </div>
       </section>
     </>

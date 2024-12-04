@@ -4,9 +4,13 @@ import { Context } from "../App";
 export default function FormSection1() {
   const { view } = useContext(Context);
 
+  // flex-direction: column;
+  // gap: 1rem;
+  // margin: 2rem 0;
+
   return (
     <>
-      <section className={`sectionOne d-flex ${view === 0 ? "" : "hidden"}`}>
+      <section className={`flex flex-col gap-4 ${view === 0 ? "" : "hidden"}`}>
         <InputText
           title="Name"
           type="name"
