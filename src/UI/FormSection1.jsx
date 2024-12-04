@@ -6,7 +6,7 @@ export default function FormSection1() {
 
   return (
     <>
-      <section className={`sectionOne d-flex ${view === 0 ? "" : "d-none"}`}>
+      <section className={`sectionOne d-flex ${view === 0 ? "" : "hidden"}`}>
         <InputText
           title="Name"
           type="name"

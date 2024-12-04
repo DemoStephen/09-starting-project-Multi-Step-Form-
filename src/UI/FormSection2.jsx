@@ -17,7 +17,7 @@ export default function FormSection2() {
   }
   return (
     <>
-      <section className={`sectionTwo d-flex ${view === 1 ? "" : "d-none"}`}>
+      <section className={`sectionTwo d-flex ${view === 1 ? "" : "hidden"}`}>
         <section className="d-flex">
           {Plans.map((info) => {
             return (

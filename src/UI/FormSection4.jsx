@@ -9,7 +9,7 @@ export default function FormSection4() {
   };
   return (
     <>
-      <section className={`sectionFour  ${view === 3 ? "" : "d-none"}`}>
+      <section className={`sectionFour  ${view === 3 ? "" : "hidden"}`}>
         <section>
           <div className="d-flex arcade">
             <p>

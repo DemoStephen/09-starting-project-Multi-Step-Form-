@@ -7,7 +7,7 @@ export default function FormSection3() {
   const { view } = useContext(Context);
   return (
     <>
-      <section className={`sectionThree d-flex  ${view === 2 ? "" : "d-none"}`}>
+      <section className={`sectionThree d-flex  ${view === 2 ? "" : "hidden"}`}>
         {AddOns.map((addOn) => {
           return (
             <InputCheckBox
