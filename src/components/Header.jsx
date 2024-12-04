@@ -5,8 +5,8 @@ export default function Header() {
   const { view } = useContext(Context);
   return (
     <>
-      <header>
-        <h1>{header[view].heading}</h1>
+      <header className="mb-4">
+        <h1 className="text-3xl font-semibold">{header[view].heading}</h1>
         <p>{header[view].text}</p>
       </header>
     </>
