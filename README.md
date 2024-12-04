@@ -1,6 +1,6 @@
 # Multi Step Form
 
-This is a solution to the Multi-step form challenge on [Frontend Mentor](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ).
+This is a solution to the Multi-step form challenge on Frontend Mentor
 
 ## Table of contents
 
@@ -31,16 +31,16 @@ Users should be able to:
 
 ### Screenshot
 
-![step 1](./src/templates/desktop-design-step-1.jpg)
-![step-2](./src/templates/desktop-design-step-2-monthly.jpg)
-![step-3](./src/templates/desktop-design-step-3-monthly.jpg)
-![step-4](./src/templates/desktop-design-step-4-monthly.jpg)
-![step-5](./src/templates/desktop-design-step-5.jpg)
+![step 1](/src/templates/desktop-design-step-1.jpg)
+![step-2](/src/templates/desktop-design-step-2-monthly.jpg)
+![step-3](/src/templates/desktop-design-step-3-monthly.jpg)
+![step-4](/src/templates/desktop-design-step-4-monthly.jpg)
+![step-5](/src/templates/desktop-design-step-5.jpg)
 
 ### Links
 
-- Solution URL: [codewithstephen.com/multistepform](https://github.com/DemoStephen/09-starting-project-Multi-Step-Form-)
-- Live Site URL: [codewithstephen.com/multistepform](https://demostephen.github.io/09-starting-project-Multi-Step-Form-/)
+- Solution URL: [codewithstephen.com/multistepform](//github.com/DemoStephen/Multi-Step-Form-React)
+- Live Site URL: [codewithstephen.com/multistepform](//multistepform-stephen.vercel.app/)
 
 ## My process
 
@@ -73,6 +73,7 @@ export default function App() {
 
 ## Author
 
-- Website - [codewithstephen.com](https://www.codewithstephen.com)
-- Frontend Mentor - [@codewithstephen](https://www.frontendmentor.io/profile/codewithstephen)
-- Twitter - [@codewithstephen](https://www.twitter.com/codewithstephen)
+- Website - [codewithstephen.com](//codewithstephen.vercel.app/)
+- Frontend Mentor - [@codewithstephen](//www.frontendmentor.io/profile/codewithstephen/)
+- Twitter - [@codewithstephen](//x.com/codewithstephen/)
+- Facebook - [Stephen Adewale Nifemi](//web.facebook.com/Inventorstephen/)
