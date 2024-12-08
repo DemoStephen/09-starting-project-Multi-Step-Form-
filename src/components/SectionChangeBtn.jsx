@@ -9,7 +9,9 @@ export default function SectionChange() {
   return (
     <>
       <section className="absolute bottom-0 left-0 w-full bg-white p-4">
-        <div className="flex justify-between">
+        <div
+          className={`flex ${view === 0 ? "justify-end" : "justify-between"}`}
+        >
           {view > 0 && (
             <button
               type="button"
