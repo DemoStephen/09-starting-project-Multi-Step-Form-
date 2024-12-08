@@ -38,15 +38,6 @@ export default function FormSection2() {
           })}
         </section>
 
-        {/* content: "";
-  position: absolute;
-  width: 1rem;
-  height: 1rem;
-  margin: 0.275rem 0.25rem;
-  border-radius: 50%;
-  background-color: var(--white);
-  transition: 0.5s; */}
-
         <div className="flex justify-center gap-4">
           <p className={classes ? "" : "font-medium"}>Monthly</p>
           <div className="flex justify-center items-center">

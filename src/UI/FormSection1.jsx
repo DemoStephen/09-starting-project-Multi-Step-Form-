@@ -1,19 +1,16 @@
+/* eslint-disable react/prop-types */
 import InputText from "../components/InputText";
 import { useContext } from "react";
 import { Context } from "../App";
 export default function FormSection1() {
   const { view } = useContext(Context);
 
-  // flex-direction: column;
-  // gap: 1rem;
-  // margin: 2rem 0;
-
   return (
     <>
       <section className={`flex flex-col gap-4 ${view === 0 ? "" : "hidden"}`}>
         <InputText
           title="Name"
-          type="name"
+          type="text"
           name="fullName"
           placeholder="e.g. Stephen Adewale"
           autoComplete="cc-name"

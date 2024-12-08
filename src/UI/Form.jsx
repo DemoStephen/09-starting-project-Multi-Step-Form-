@@ -11,34 +11,31 @@ import { Context } from "../App";
 export default function Form() {
   const { view, handleView } = useContext(Context);
   const [success, setSuccess] = useState(false);
-  const [formInfo, setFormInfo] = useState();
-
-  // {
-  //   fullName: "",
-  //   emailAddress: "",
-  //   phoneNumber: "",
-  //   plan: "",
-  //   addOns: [],
-  //   duration: null,
-  // }
+  const [formInfo, setFormInfo] = useState({
+    fullName: "",
+    emailAddress: "",
+    phoneNumber: "",
+    plan: null,
+    duration: null,
+    addOns: [],
+  });
 
   function handleSubmit(event) {
     event.preventDefault();
+    const fd = new FormData(event.target);
+    const addOns = fd.getAll("addOns");
+    const duration = fd.get("duration");
+    const plan = fd.get("plan");
+    const data = Object.fromEntries(fd.entries());
+    data.addOns = addOns;
+    data.duration = duration;
+    data.plan = plan;
+    console.log(data);
+    setFormInfo(data);
+    handleView(3);
     if (view === 3) setSuccess(true);
-    else if (view === 2) {
-      const fd = new FormData(event.target);
-      const addOns = fd.getAll("addOns");
-      const duration = fd.get("duration");
-      const plan = fd.get("plan");
-      const data = Object.fromEntries(fd.entries());
-      data.addOns = addOns;
-      data.duration = duration;
-      data.duration = plan;
-      setFormInfo(data);
-      handleView(3);
-    }
   }
-  console.log(formInfo);
+
   return (
     <>
       {success ? (
