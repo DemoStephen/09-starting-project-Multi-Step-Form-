@@ -15,7 +15,7 @@ export default function ThankYou() {
           </p>
         </header>
         <div>
-          <p className="uppercase font-medium mb-2">Connect with developer</p>
+          <p className="uppercase font-medium mb-4">Connect with developer</p>
           <div className="flex gap-4 justify-center">
             <ConnectButton href="//github.com/DemoStephen" icon={<Github />} />
             <ConnectButton href="//x.com/codewithstephen" icon={<X />} />
