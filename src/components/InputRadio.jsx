@@ -1,12 +1,4 @@
 /* eslint-disable react/prop-types */
-
-// flex-direction: column;
-// justify-content: space-between;
-// height: 100%;
-// padding: 1rem;
-// border: 0.125rem solid var(--lightgray);
-// border-radius: 0.5rem;
-
 export default function InputRadio({ plan, image, price, name }) {
   return (
     <div className="w-full">

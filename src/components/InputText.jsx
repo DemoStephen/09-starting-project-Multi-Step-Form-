@@ -1,26 +1,37 @@
 /* eslint-disable react/prop-types */
-import { useRef } from "react";
+
+import { useRef, useState } from "react";
 
 export default function InputText({ title, ...props }) {
   const ref = useRef();
-  // const [error, SetError] = useState(false);
+  const [err, setErr] = useState(false);
 
-  // function handleErrorMessage() {
-  //   const value = ref.current.value.trim();
-  //   const type = ref.current.type;
-  // }
+  function handleError() {
+    if (ref.current.value === "") {
+      setErr(true);
+    } else {
+      setErr(false);
+    }
+  }
 
   return (
     <>
       <label htmlFor={props.name}>
         <div className="flex justify-between mb-2 items-center">
           <strong className="text-blue-950">{title}</strong>
-          <span className="text-red-400 text-sm font-medium"></span>
+          <span className="text-red-300 text-sm font-medium">
+            {err && `${title} is invalid`}
+          </span>
         </div>
         <input
           ref={ref}
           {...props}
-          className="w-full py-3 px-4 border border-gray-200 outline-none rounded-md text-slate-500"
+          onChange={handleError}
+          className={`w-full py-3 px-4 border ${
+            err
+              ? "border-red-200 placeholder:text-red-300  text-red-300"
+              : "border-gray-200 text-slate-500"
+          } outline-none rounded-md`}
         />
       </label>
     </>
